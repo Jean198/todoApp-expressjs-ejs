@@ -30,4 +30,10 @@ app.post("/", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/delete", (req, res) => {
+  var todoIndex = Number(req.body.delete);
+  todoList.splice(todoIndex,1);
+  res.redirect("/");
+});
+
 app.listen(port, () => console.log("server started at port 3000"));

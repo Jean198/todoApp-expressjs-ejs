@@ -13,16 +13,23 @@
     </div>
 
     <div class="box">
-      <% for (var todo of todoList){ %>
+      <% for (var i=0; i < todoList.length; i++){ %>
       <div class="item">
         <input type="checkbox" />
-        <p><%= todo %></p>
+        <form action="/delete" method="post" class="delete-form">
+          <div class="todoItem">
+            <div class="todo-container"><%= todoList[i] %> </div>
+            <div class="delete-button-container">
+              <button type="submit" class="delete-button" name="delete" value=<%= i %> >Delete</button>
+            </div>
+          </div>
+        </form>
       </div>
       <% } %>
 
       <form class="item" action="/" method="post">
         <input type="text" name="newItem" placeholder="New toDo" required autocomplete="off"/>
-        <button type="submit" name="button">+</button>
+        <button type="submit" name="button" class="submit-button">+</button>
       </form>
     </div>
   </body>

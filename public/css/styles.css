@@ -27,14 +27,14 @@ html {
     min-height: 70px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 3px solid #F1F1F1;
   }
 
   .item:last-child {
     border-bottom: 0;
   }
 
-  input:checked+p {
+  input:checked+form div {
     text-decoration: line-through;
     text-decoration-color: #A683E3;
   }
@@ -43,20 +43,38 @@ html {
     margin: 20px;
   }
 
-  p {
-    margin: 0;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 200;
-    color: #00204a;
+  .todoItem {
+   width: 300px;
+   padding: 10px 10px;
+   display: flex;
+   font-size: 20px;
+   justify-content:space-between;
+
+  }
+  @media only screen and (max-width: 780px){
+    .todoItem{
+      width:280px;
+    }
+  }
+
+  .todo-container{
+
+  }
+
+  .delete-button-container{
+    border-radius: 5%;
+
   }
 
   form {
     text-align: center;
-    margin-left: 20px;
+    margin-left: 5px;
   }
 
-  button {
+
+
+
+  .submit-button {
     min-height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -66,6 +84,19 @@ html {
     font-size: 30px;
     padding-bottom: 6px;
     border-width: 0;
+  }
+
+
+  .delete-button{
+    width: 70px;
+    border-radius: 5%;
+    border-color: transparent;
+    background-color: red;
+    color: #fff;
+    border-width: 0;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
   }
 
   input[type="text"] {
